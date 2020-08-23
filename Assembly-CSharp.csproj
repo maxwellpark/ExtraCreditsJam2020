@@ -55,8 +55,8 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio Tools for Unity\16.0\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\MeleeAttack.cs" />
     <Compile Include="Assets\Scripts\Enemies\EnemyConstants.cs" />
+    <Compile Include="Assets\Scripts\CombatConstants.cs" />
     <Compile Include="Assets\Scripts\Projectile.cs" />
     <Compile Include="Assets\Scripts\Pet\PetMovement.cs" />
     <Compile Include="Assets\Scripts\Enemies\Spawner.cs" />
@@ -64,10 +64,12 @@
     <Compile Include="Assets\Scripts\Player\PlayerData.cs" />
     <Compile Include="Assets\Scripts\SpriteAnimator.cs" />
     <Compile Include="Assets\Scripts\CameraController.cs" />
+    <Compile Include="Assets\Scripts\MeleeAttack.cs" />
     <Compile Include="Assets\Scripts\ProjectileManager.cs" />
-    <Compile Include="Assets\Scripts\Wall.cs" />
+    <Compile Include="Assets\Scripts\Boundary.cs" />
     <Compile Include="Assets\Scripts\Enemies\Enemy.cs" />
-    <Compile Include="Assets\Scripts\CombatConstants.cs" />
+    <Compile Include="Assets\Scripts\Levels\Level1.cs" />
+    <Compile Include="Assets\Scripts\Levels\Level2.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

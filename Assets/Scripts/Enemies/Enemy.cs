@@ -48,13 +48,16 @@ public class Enemy : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         Debug.Log("TRIGG");
-        if (other.transform.tag == playerObject.tag)
+        if (other.transform.tag == "Player")
         {
             DamagePlayer();
         }
         else if (other.transform.tag == "Projectile")
         {
+            //getcomponent<projectile>.damage 
+            
             TakeDamage(CombatConstants.basicProjectileDamage);
+            Destroy(other.gameObject); 
 
             if (healthPoints <= 0)
             {

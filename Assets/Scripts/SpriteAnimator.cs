@@ -82,7 +82,6 @@ public class SpriteAnimator : MonoBehaviour
     // the player's current direction 
     private void UpdateFrameArray()
     {
-        // Ugliest switch block in existence 
         switch (direction)
         {
             case Direction.up:
