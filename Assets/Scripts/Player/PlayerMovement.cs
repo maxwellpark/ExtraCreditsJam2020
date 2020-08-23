@@ -20,6 +20,7 @@ public class PlayerMovement : MonoBehaviour
     {
         Screen.fullScreen = true; 
         //Cursor.visible = false;
+        
     }
 
     void Update()
@@ -34,6 +35,8 @@ public class PlayerMovement : MonoBehaviour
         //Debug.DrawRay(transform.position, new Vector3(transform.position.y + 100f, 0f)); 
         //Physics2D.Raycast(transform.position, mousePosition);
         Physics2D.Raycast(transform.position, Vector2.up);
+
+        Debug.Log("Cursor at: " + Input.mousePosition); 
     }
 
     private void FixedUpdate()

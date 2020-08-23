@@ -19,13 +19,17 @@ public class Pickup : ScriptableObject
 
     public void TriggerPickup()
     {
+        Debug.Log("Pickup triggered!"); 
         if (type == PickupType.health)
         {
             PlayerData.healthPoints += health; 
         }
         else if (type == PickupType.item)
         {
-
+            // inventory too costly 
+            PlayerData.weapon = weapon; 
         }
+
+        
     }
 }

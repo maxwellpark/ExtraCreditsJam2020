@@ -8,8 +8,13 @@ public class PlayerData : MonoBehaviour
     public static int healthPoints = 10;
     public static int abilityCooldown = 60;
 
-    public Weapon weapon; 
+    public static Weapon weapon;
 
 
+    private void OnGUI()
+    {
+        
+
+    }
     // movement data 
 }

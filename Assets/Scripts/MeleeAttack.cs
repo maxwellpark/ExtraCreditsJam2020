@@ -38,7 +38,7 @@ public class MeleeAttack : MonoBehaviour
                 Collider2D[] affectedEnemies = Physics2D.OverlapCircleAll(attackPosition.position, attackRange, nearbyEnemies);
                 foreach(Collider2D affectedEnemy in affectedEnemies)
                 {
-                    affectedEnemy.GetComponent<Enemy>().TakeDamage(damage);
+                    affectedEnemy.GetComponent<EnemyInteraction>().TakeDamage(damage);
                 }
             }
             attackTimer = attackCooldown;
