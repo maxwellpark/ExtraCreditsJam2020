@@ -4,7 +4,7 @@ using UnityEngine;
 
 public enum PickupType
 {
-    health, item 
+    health, speed, item 
 }
 
 // break these out later 
@@ -15,7 +15,8 @@ public class Pickup : ScriptableObject
     public Weapon weapon; 
     public Vector2 coordinates;
     public int health;
-    public int damage; 
+    public int damage;
+    public int speedIncrease;
     public PickupType type;
     public WeaponType weaponType; 
 
@@ -34,6 +35,10 @@ public class Pickup : ScriptableObject
             //ProjectileManager.currentWeaponPrefab = weapon.prefab;
             PlayerData.damage = damage; 
             ProjectileManager.weaponType = weaponType;
+        }
+        else if (type == PickupType.speed)
+        {
+            PlayerMovement.speed += speedIncrease;
         }
 
         

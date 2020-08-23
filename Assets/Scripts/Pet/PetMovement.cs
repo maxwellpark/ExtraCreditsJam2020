@@ -6,7 +6,8 @@ using UnityEngine.Animations;
 public class PetMovement : MonoBehaviour
 {
     public GameObject playerObject;
-    public GameObject pivotObject; 
+    public GameObject pivotObject;
+    public GameObject cameraObject; 
     public Camera mainCamera; 
 
     public Sprite[] frameArray;
@@ -21,7 +22,9 @@ public class PetMovement : MonoBehaviour
 
     void Start()
     {
-        //mainCamera = GameObject.FindGameObjectWithTag("MainCamera");   
+        playerObject = GameObject.FindGameObjectWithTag("Player"); 
+        cameraObject = GameObject.FindGameObjectWithTag("MainCamera");
+        mainCamera = cameraObject.GetComponent<Camera>(); 
         //Debug.Log("Pet position:" + transform.position);
         //Debug.Log("Pivot position: " + pivotObject.transform.position);
     }

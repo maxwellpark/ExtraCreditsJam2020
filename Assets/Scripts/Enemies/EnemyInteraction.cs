@@ -35,29 +35,43 @@ public class EnemyInteraction : MonoBehaviour
     // collisions with other objects 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("TRIGG");
+        // should switch tag here 
         if (other.transform.tag == "Player")
         {
             DamagePlayer();
         }
         else if (other.transform.tag == "Pet")
         {
+            Debug.Log("Pet collision with enemy."); 
             // game over 
             // load title screen or refresh level 
             // lives? 
             Application.Quit();
         }
         else if (other.transform.tag == "Projectile")
-        {
-            //getcomponent<projectile>.damage 
-            
-            TakeDamage(CombatConstants.basicProjectileDamage);
+        {            
+            TakeDamage(PlayerData.damage);
             Destroy(other.gameObject); 
+        }
+        else if (other.transform.tag == "SlowProjectile")
+        {
+            TakeDamage(PlayerData.damage);
+            enemyData.movementSpeed -= PlayerData.slowAmount;
+            Destroy(other.gameObject);
+        }
+        else if (other.transform.tag == "SnareProjectile")
+        {
+            TakeDamage(PlayerData.damage);
+            enemyData.movementSpeed = 0f;
+            // remember to start timer
 
-            if (enemyData.hitpoints <= 0)
-            {
-                Destroy(gameObject);
-            }
+            Destroy(other.gameObject); 
+            //other.gameObject.GetComponent<Rigidbody2D>().AddRelativeForce());
+        }
+
+        if (enemyData.hitpoints <= 0)
+        {
+            Destroy(gameObject);
         }
     }
 

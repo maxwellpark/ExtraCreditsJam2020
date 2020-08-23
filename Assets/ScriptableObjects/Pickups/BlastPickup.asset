@@ -17,5 +17,6 @@ MonoBehaviour:
   coordinates: {x: 0, y: 0}
   health: 0
   damage: 5
-  type: 1
+  speedIncrease: 0
+  type: 2
   weaponType: 3

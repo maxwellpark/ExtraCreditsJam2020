@@ -128,6 +128,7 @@ GameObject:
   - component: {fileID: 5617401901784980438}
   - component: {fileID: 5617401901784980437}
   - component: {fileID: 5617401901784980444}
+  - component: {fileID: 5477627130750312601}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -165,7 +166,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainCamera: {fileID: 0}
-  movementSpeed: 5
   mousePosition: {x: 0, y: 0, z: 0}
 --- !u!114 &5617401901784980441
 MonoBehaviour:
@@ -214,6 +214,11 @@ MonoBehaviour:
   projectilePrefab: {fileID: 5546633202344080935, guid: 25a1c324d42563d4ab78b08341a765e5, type: 3}
   projectileContainer: {fileID: 0}
   gunBarrel: {fileID: 5617401900167161889}
+  startingWeaponPrefab: {fileID: 0}
+  dualShotPrefab: {fileID: 0}
+  triShotPrefab: {fileID: 0}
+  slowProjectilePrefab: {fileID: 0}
+  theBigOnePrefab: {fileID: 0}
   startingWeapon: {fileID: 11400000, guid: f9570139c59494d47bf277e401d0ac37, type: 2}
   projectileDropOff: {x: 64, y: 64, z: 0}
   muzzleVelocity: 20
@@ -325,6 +330,27 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   attackRange: 0.4
+--- !u!50 &5477627130750312601
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5617401901784980436}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &5617401901789430998
 GameObject:
   m_ObjectHideFlags: 0

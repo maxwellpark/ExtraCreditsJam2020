@@ -2,25 +2,37 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Tilemaps;
 
 public class LevelManager : MonoBehaviour
 {
     GameObject player; 
     GameObject pet;
     GameObject waveOneContainer;
-    GameObject waveTwoContainer; 
+    GameObject waveTwoContainer;
 
-    public Scene[] levels; 
+    [SerializeField]
+    public Level[] levels; 
 
     public static int currentLevel = 0; 
-    float petSizeIncrease = 0.25f; 
+    float petSizeIncrease = 0.25f;
+
+    public Tilemap tilemap;
+
+    GameObject exit;
+    //Tile exitTile;
+    //TileBase exitTileBase; 
+    //Vector3Int exitPosition = new Vector3Int(1340, 434, 0); 
 
      void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
         pet = GameObject.FindGameObjectWithTag("Pet");
         waveOneContainer = GameObject.Find("WaveOneContainer");
-        waveTwoContainer = GameObject.Find("WaveTwoContainer"); 
+        waveTwoContainer = GameObject.Find("WaveTwoContainer");
+
+        //exitTileBase = tilemap.GetTile(exitPosition); 
+        Debug.Log(levels[currentLevel].scenePath);
     }
 
     void Update()
@@ -29,6 +41,7 @@ public class LevelManager : MonoBehaviour
         //{
         //    NewWave(); 
         //}
+
     }
 
     void NewWave()
@@ -41,23 +54,29 @@ public class LevelManager : MonoBehaviour
 
     void TagIn()
     {
+        //if (FirstWaveDead())
+        //{
 
+        //}
     }
 
+    [System.Obsolete]
     bool FirstWaveDead()
     {
-        foreach (Transform transform in transform.root)
+        object[] obj = FindSceneObjectsOfType(typeof(GameObject));
+        foreach (object o in obj)
         {
-            if (transform.tag == "Enemy")
+            GameObject g = (GameObject)o;
+            if (g.tag == "Enemy")
             {
-                return false;
+                return false; 
             }
         }
-            return true; 
+        return true; 
     }
 
     // call this from exit script oncollider method 
-    void TranisitionToNextLevel()
+    public void TranisitionToNextLevel()
     {
         currentLevel++;
 
@@ -65,6 +84,6 @@ public class LevelManager : MonoBehaviour
         pet.transform.localScale += new Vector3(petSizeIncrease, petSizeIncrease, 0f);
 
         // Load next level  
-        SceneManager.LoadScene(levels[currentLevel].name); 
+        SceneManager.LoadScene(levels[currentLevel].scenePath); 
     }
 }

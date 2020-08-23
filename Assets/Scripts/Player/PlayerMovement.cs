@@ -11,7 +11,7 @@ public class PlayerMovement : MonoBehaviour
 {
     public Camera mainCamera;
 
-    public float movementSpeed;
+    public static float speed;
     public static Vector2 movement;
     public Vector3 mousePosition;
 
@@ -20,6 +20,7 @@ public class PlayerMovement : MonoBehaviour
     {
         Screen.fullScreen = true; 
         //Cursor.visible = false;
+        //GetComponent<Rigidbody2D>().c
         
     }
 
@@ -36,7 +37,7 @@ public class PlayerMovement : MonoBehaviour
         //Physics2D.Raycast(transform.position, mousePosition);
         //Physics2D.Raycast(transform.position, Vector2.up);
 
-        //Debug.Log("Cursor at: " + Input.mousePosition); 
+        //Debug.Log("Cursor at: " + Input.mousePosition);
     }
 
     private void FixedUpdate()
@@ -56,7 +57,7 @@ public class PlayerMovement : MonoBehaviour
         //transform.rotation = Quaternion.Euler(0f, 0f, zAngle);
 
         Vector3 velocity = new Vector3(movement.x, movement.y, 0f);
-        transform.position += velocity * movementSpeed * Time.fixedDeltaTime;
+        transform.position += velocity * speed * Time.fixedDeltaTime;
     }
 
     private void SetDirection()

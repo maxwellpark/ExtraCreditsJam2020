@@ -17,7 +17,8 @@ public class ProjectileManager : MonoBehaviour
 
     public GameObject startingWeaponPrefab;
     public GameObject dualShotPrefab;
-    public GameObject triShotPrefab; 
+    public GameObject triShotPrefab;
+    public GameObject slowProjectilePrefab; 
     public GameObject theBigOnePrefab; 
 
     GameObject playerObject;
