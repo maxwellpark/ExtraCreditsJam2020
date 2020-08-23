@@ -18,7 +18,8 @@ public class PlayerMovement : MonoBehaviour
 
     void Start()
     {
-        Cursor.visible = false; 
+        Screen.fullScreen = true; 
+        //Cursor.visible = false;
     }
 
     void Update()
@@ -26,18 +27,28 @@ public class PlayerMovement : MonoBehaviour
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
 
-        mousePosition = mainCamera.ScreenToWorldPoint(Input.mousePosition); 
+        mousePosition = mainCamera.ScreenToWorldPoint(Input.mousePosition);
+        //Debug.DrawRay(transform.position, mousePosition * 100f, Color.red); 
+        //Debug.DrawRay(transform.position, new Vector3(transform.position.y + 100f, 0f)); 
+        //Physics2D.Raycast(transform.position, mousePosition);
+        Physics2D.Raycast(transform.position, Vector2.up);
     }
 
     private void FixedUpdate()
     {
-        // Reverse direction of vector 
-        Vector3 headDirection = mousePosition - transform.position;
+        // Adjust for diagonal input 
+        if (movement.magnitude > 1f)
+        {
+            movement /= movement.magnitude;
+        }
 
-        // Angle between x axis and directional vector (x,y)
-        float zAngle = Mathf.Atan2(headDirection.y, headDirection.x) * Mathf.Rad2Deg; // +/- 90f 
+        //// Reverse direction of vector 
+        //Vector3 headDirection = mousePosition - transform.position;
 
-        transform.rotation = Quaternion.Euler(0f, 0f, zAngle);
+        //// Angle between x axis and directional vector (x,y)
+        //float zAngle = Mathf.Atan2(headDirection.y, headDirection.x) * Mathf.Rad2Deg + -90f; // +/- 90f 
+
+        //transform.rotation = Quaternion.Euler(0f, 0f, zAngle);
 
         Vector3 velocity = new Vector3(movement.x, movement.y, 0f);
         transform.position += velocity * movementSpeed * Time.fixedDeltaTime;

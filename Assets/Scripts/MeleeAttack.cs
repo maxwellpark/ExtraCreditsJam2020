@@ -4,13 +4,21 @@ using UnityEngine;
 
 public class MeleeAttack : MonoBehaviour
 {
-    float attackCooldown = 10f;
-    float attackTimer; 
-    float attackRange;
-    int damage; 
-
+    public GameObject meleeWeapon; 
+    public GameObject visualPrefab; 
+    GameObject currentVisual;
     public Transform attackPosition;
-    public LayerMask nearbyEnemies; 
+    public LayerMask nearbyEnemies;
+
+    public float attackRange;
+    float attackCooldown = 10f;
+    float attackTimer = 0f; 
+    float visualTimer; 
+    bool isShowing; 
+
+    int damage = 1;
+
+
 
 
     void Start()
@@ -22,8 +30,11 @@ public class MeleeAttack : MonoBehaviour
     {
         if (attackTimer <= 0)
         {
-            if (Input.GetKey(KeyCode.Space))
+            if (Input.GetKeyUp(KeyCode.Space))
             {
+                Debug.Log("Spacebar"); 
+                WeaponVisual(); 
+
                 Collider2D[] affectedEnemies = Physics2D.OverlapCircleAll(attackPosition.position, attackRange, nearbyEnemies);
                 foreach(Collider2D affectedEnemy in affectedEnemies)
                 {
@@ -37,6 +48,27 @@ public class MeleeAttack : MonoBehaviour
         {
             attackTimer -= Time.deltaTime;
         }
+
+        if (visualTimer <= 0 && isShowing)
+        {
+            Destroy(currentVisual);
+            isShowing = false;
+        }
+        else
+        {
+            visualTimer -= Time.deltaTime;
+        }
+
+
+    }
+
+    private void WeaponVisual()
+    {
+        currentVisual = Instantiate(visualPrefab);
+        currentVisual.transform.parent = meleeWeapon.transform;
+        isShowing = true;
+        visualTimer = 3f;
+
     }
 
     private void OnDrawGizmosSelected()

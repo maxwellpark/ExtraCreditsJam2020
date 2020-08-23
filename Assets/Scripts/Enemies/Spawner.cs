@@ -6,9 +6,9 @@ using UnityEngine.UI;
 public class Spawner : MonoBehaviour
 {
     public GameObject enemyObject;
-    public GameObject parentObject; 
+    public GameObject parentObject;
 
-    public int enemyCount;
+    public int enemyCount = 5; 
     public int killCount;
     public int deathCount;
 

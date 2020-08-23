@@ -6,9 +6,11 @@ public class Projectile : MonoBehaviour
 {
     public GameObject collisionEffect;
     private int effectDelay = 1;
-    public int damage; 
+    public int damage;
 
-    //private void OnCollisionEnter(Collision collision)
+    // move all to recipient methods? 
+
+    //private void OnCollisionEnter2D(Collision2D collision)
     //{
     //    Debug.Log("Oncolliisonenter");
     //    GameObject effect = Instantiate(collisionEffect, transform.position, Quaternion.identity);
