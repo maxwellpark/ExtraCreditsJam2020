@@ -34,9 +34,9 @@ public class PlayerMovement : MonoBehaviour
         //Debug.DrawRay(transform.position, mousePosition * 100f, Color.red); 
         //Debug.DrawRay(transform.position, new Vector3(transform.position.y + 100f, 0f)); 
         //Physics2D.Raycast(transform.position, mousePosition);
-        Physics2D.Raycast(transform.position, Vector2.up);
+        //Physics2D.Raycast(transform.position, Vector2.up);
 
-        Debug.Log("Cursor at: " + Input.mousePosition); 
+        //Debug.Log("Cursor at: " + Input.mousePosition); 
     }
 
     private void FixedUpdate()

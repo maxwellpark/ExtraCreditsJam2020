@@ -5,12 +5,13 @@ using Pathfinding;
 
 public class EnemyVFX : MonoBehaviour
 {
-    public AIPath aiPath;
-    public EnemySpriteAnimator enemySpriteAnimator;
+    AIPath aiPath;
+    EnemySpriteAnimator enemySpriteAnimator;
 
     void Start()
     {
-        
+        aiPath = GetComponent<AIPath>();
+        enemySpriteAnimator = GetComponent<EnemySpriteAnimator>(); 
     }
 
     void Update()

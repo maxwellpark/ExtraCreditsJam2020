@@ -8,18 +8,13 @@ public class EnemyInteraction : MonoBehaviour
 {
     public GameObject playerObject;
     public PlayerData playerData;
-
-    private float healthPoints = 5; 
-    private float movementRange;
-    private float damageRange;
-
-
-
+    EnemyData enemyData; 
 
     void Start()
     {
         playerObject = GameObject.FindGameObjectWithTag("Player");
-        playerData = playerObject.GetComponent<PlayerData>(); 
+        playerData = playerObject.GetComponent<PlayerData>();
+        enemyData = GetComponent<EnemyData>(); 
     }
 
     void Update()
@@ -27,30 +22,30 @@ public class EnemyInteraction : MonoBehaviour
         
     }
 
-    public Vector3 GenerateRandomNavMeshPosition()
-    {
-        Vector3 randomPosition = transform.position + Random.insideUnitSphere * movementRange;
-        NavMeshHit navHit;
-        NavMesh.SamplePosition(randomPosition, out navHit, 1.0f, NavMesh.AllAreas);
-        return navHit.position;
-    }
-
     private void DamagePlayer()
     {
-        PlayerData.healthPoints -= EnemyConstants.damage; 
+        PlayerData.healthPoints -= enemyData.damage;  
     }
 
     public void TakeDamage(int damage)
     {
-        healthPoints -= PlayerData.damage; 
+        enemyData.hitpoints -= PlayerData.damage; 
     }
 
+    // collisions with other objects 
     private void OnTriggerEnter2D(Collider2D other)
     {
         Debug.Log("TRIGG");
         if (other.transform.tag == "Player")
         {
             DamagePlayer();
+        }
+        else if (other.transform.tag == "Pet")
+        {
+            // game over 
+            // load title screen or refresh level 
+            // lives? 
+            Application.Quit();
         }
         else if (other.transform.tag == "Projectile")
         {
@@ -59,7 +54,7 @@ public class EnemyInteraction : MonoBehaviour
             TakeDamage(CombatConstants.basicProjectileDamage);
             Destroy(other.gameObject); 
 
-            if (healthPoints <= 0)
+            if (enemyData.hitpoints <= 0)
             {
                 Destroy(gameObject);
             }

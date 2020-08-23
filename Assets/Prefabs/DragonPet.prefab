@@ -75,6 +75,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 273228472226489670}
+  - {fileID: 993715668732220447}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -55}
@@ -141,7 +142,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6043cbd4731ac724f87b63f0b4db144c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerObject: {fileID: 0}
+  playerObject: {fileID: 5617401901784980436, guid: cc8381ac006829c4cbf1d80faf2117b3, type: 3}
   pivotObject: {fileID: 0}
   mainCamera: {fileID: 0}
   frameArray: []
@@ -161,5 +162,54 @@ MonoBehaviour:
   projectilePrefab: {fileID: 5546633202344080935, guid: 25a1c324d42563d4ab78b08341a765e5, type: 3}
   projectileContainer: {fileID: 0}
   gunBarrel: {fileID: 180013953568596971}
+  startingWeaponPrefab: {fileID: 0}
+  dualShotPrefab: {fileID: 0}
+  triShotPrefab: {fileID: 0}
+  theBigOnePrefab: {fileID: 0}
+  startingWeapon: {fileID: 0}
   projectileDropOff: {x: 64, y: 64, z: 0}
   muzzleVelocity: 10
+--- !u!1 &6274775928395527343
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 993715668732220447}
+  - component: {fileID: 3908289891279640598}
+  m_Layer: 0
+  m_Name: GunBarrel (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &993715668732220447
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6274775928395527343}
+  m_LocalRotation: {x: 0, y: 0, z: 0.46174863, w: 0.8870109}
+  m_LocalPosition: {x: -0.046, y: 0.011, z: 0}
+  m_LocalScale: {x: 0.25, y: 0.25, z: 1}
+  m_Children: []
+  m_Father: {fileID: 309873200741385134}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 55}
+--- !u!65 &3908289891279640598
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6274775928395527343}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Size: {x: 0.599067, y: 0.12283942, z: 1}
+  m_Center: {x: 0.20046672, y: 0.0019931095, z: 0}

@@ -214,6 +214,7 @@ MonoBehaviour:
   projectilePrefab: {fileID: 5546633202344080935, guid: 25a1c324d42563d4ab78b08341a765e5, type: 3}
   projectileContainer: {fileID: 0}
   gunBarrel: {fileID: 5617401900167161889}
+  startingWeapon: {fileID: 11400000, guid: f9570139c59494d47bf277e401d0ac37, type: 2}
   projectileDropOff: {x: 64, y: 64, z: 0}
   muzzleVelocity: 20
 --- !u!114 &5617401901784980443

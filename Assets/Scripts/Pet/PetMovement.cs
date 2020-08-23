@@ -22,8 +22,8 @@ public class PetMovement : MonoBehaviour
     void Start()
     {
         //mainCamera = GameObject.FindGameObjectWithTag("MainCamera");   
-        Debug.Log("Pet position:" + transform.position);
-        Debug.Log("Pivot position: " + pivotObject.transform.position);
+        //Debug.Log("Pet position:" + transform.position);
+        //Debug.Log("Pivot position: " + pivotObject.transform.position);
     }
 
     void Update()
