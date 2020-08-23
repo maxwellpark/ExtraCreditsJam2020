@@ -1,26 +1,37 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Animations;
 
 public class PetMovement : MonoBehaviour
 {
     public GameObject playerObject;
+    public GameObject pivotObject; 
+    public Camera mainCamera; 
 
     public Sprite[] frameArray;
     public SpriteRenderer spriteRenderer;
+
     Vector3 mousePosition;
     Vector2 petDistance = new Vector2(0.75f, 0f);
+
     int currentFrame; 
     float timer;
     float frameRate = 0.2f; 
 
     void Start()
     {
-        
+        //mainCamera = GameObject.FindGameObjectWithTag("MainCamera");    
+    }
+
+    void Update()
+    {
+        mousePosition = mainCamera.ScreenToWorldPoint(Input.mousePosition);
     }
 
     void FixedUpdate()
     {
+        // break this sprite anim code out 
         timer += Time.fixedDeltaTime;
 
         if (timer >= frameRate)
@@ -40,9 +51,21 @@ public class PetMovement : MonoBehaviour
         // Angle between x axis and directional vector (x,y)
         float zAngle = Mathf.Atan2(headDirection.y, headDirection.x) * Mathf.Rad2Deg + -90f; // +/- 90f 
 
-        transform.rotation = Quaternion.Euler(0f, 0f, zAngle);
+        //transform.rotation = Quaternion.Euler(0f, 0f, zAngle);
+        //transform.rotation = Quaternion.Euler(0f, 0f, zAngle);
+
+        //Vector3 newRotation = new Vector3(0f, 0f, 10f);
+        //transform.Rotate(newRotation.x, newRotation.y, newRotation.z, Space.World);
+        transform.RotateAround(pivotObject.transform.position, Vector3.forward, 1f);
+        
+        //transform.RotateAround(transform.position, Vector3.forward, 15f); 
 
         Vector2 playerPosition = playerObject.transform.position;
         transform.position = playerPosition - petDistance;
+    }
+
+    void RotatePet()
+    {
+        //transform.RotateAround(transform.position, -Vector2.left, )
     }
 }

@@ -30,7 +30,7 @@ public class MeleeAttack : MonoBehaviour
     {
         if (attackTimer <= 0)
         {
-            if (Input.GetKeyUp(KeyCode.Space))
+            if (Input.GetKeyUp("space"))
             {
                 Debug.Log("Spacebar"); 
                 WeaponVisual(); 
