@@ -30,15 +30,15 @@ public class MeleeAttack : MonoBehaviour
     {
         if (attackTimer <= 0)
         {
-            if (Input.GetKeyUp(KeyCode.Space))
+            if (Input.GetMouseButtonUp(2)) 
             {
-                Debug.Log("Spacebar"); 
+                Debug.Log("RMB"); 
                 WeaponVisual(); 
 
                 Collider2D[] affectedEnemies = Physics2D.OverlapCircleAll(attackPosition.position, attackRange, nearbyEnemies);
                 foreach(Collider2D affectedEnemy in affectedEnemies)
                 {
-                    affectedEnemy.GetComponent<Enemy>().TakeDamage(damage);
+                    affectedEnemy.GetComponent<EnemyInteraction>().TakeDamage(damage);
                 }
             }
             attackTimer = attackCooldown;

@@ -15,9 +15,7 @@ MonoBehaviour:
   prefab: {fileID: 8252153380263821072, guid: 5a7e4558b8cc6774ca1b38cc926da1fd, type: 3}
   weapon: {fileID: 11400000, guid: 2c5d89948e7fe674882018e950c9332f, type: 2}
   coordinates: {x: 0, y: 0}
-  duration: 0
   health: 0
-  damage: 3
-  speedIncrease: 0
+  damage: 2
   type: 1
   weaponType: 1

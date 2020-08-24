@@ -11,6 +11,7 @@ public class Level1 : MonoBehaviour
     public GameObject enemyPrefab; 
     int enemyCount = 5;
 
+    public GameObject enemyContainer; 
     public LayerMask enemyLayer; 
 
     Vector2[] enemyPositions = new Vector2[]
@@ -25,5 +26,25 @@ public class Level1 : MonoBehaviour
     // random coords in range defined. 
     // but account for overlapping pos. 
 
-   
+    void Start()
+    {
+        Screen.SetResolution(640, 480, true);
+
+        for (int i = 0; i < enemyCount; i++)
+        {
+            GameObject newEnemy = Instantiate(enemyPrefab);
+            newEnemy.transform.parent = enemyContainer.transform;
+            newEnemy.transform.position = enemyPositions[i];
+            Debug.Log(newEnemy.transform.position);
+
+        }
+    }
+
+    void Update()
+    {
+        if (enemyContainer.transform.childCount <= 0)
+        {
+            SceneManager.LoadScene("Level2"); 
+        }
+    }
 }
