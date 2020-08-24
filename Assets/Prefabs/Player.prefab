@@ -215,7 +215,7 @@ MonoBehaviour:
   projectileContainer: {fileID: 0}
   gunBarrel: {fileID: 5617401900167161889}
   startingWeaponPrefab: {fileID: 5546633202344080935, guid: 25a1c324d42563d4ab78b08341a765e5, type: 3}
-  dualShotPrefab: {fileID: 6932664292746333795, guid: 2e7c3d19df4f4d84994261a9922e78e5, type: 3}
+  dualShotPrefab: {fileID: 5546633202344080935, guid: f8c914eb484fd1c439365d33ed60ba5d, type: 3}
   triShotPrefab: {fileID: 0}
   slowProjectilePrefab: {fileID: 166061534253400989, guid: f6cd8f87e4ae00649ba08e6bcbd89eb9, type: 3}
   snakeShotPrefab: {fileID: 0}
