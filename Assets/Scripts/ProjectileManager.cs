@@ -18,7 +18,8 @@ public class ProjectileManager : MonoBehaviour
     public GameObject startingWeaponPrefab;
     public GameObject dualShotPrefab;
     public GameObject triShotPrefab;
-    public GameObject slowProjectilePrefab; 
+    public GameObject slowProjectilePrefab;
+    public GameObject snakeShotPrefab; 
     public GameObject theBigOnePrefab; 
 
     GameObject playerObject;
@@ -54,7 +55,7 @@ public class ProjectileManager : MonoBehaviour
         //DestroyOldProjectiles();
     }
 
-    void FireProjectile(GameObject prefab)
+    public void FireProjectile(GameObject prefab)
     {
         GameObject newProjectile = Instantiate(prefab, gunBarrel.transform.position, gunBarrel.transform.rotation);
         Debug.Log(currentWeaponPrefab);
@@ -74,6 +75,12 @@ public class ProjectileManager : MonoBehaviour
             Physics2D.IgnoreCollision(secondProjectile.GetComponent<Collider2D>(), playerObject.GetComponent<Collider2D>());
             rb = secondProjectile.GetComponent<Rigidbody2D>();
             rb.AddForce(gunBarrel.transform.up * currentWeapon.attackSpeed, ForceMode2D.Impulse);
+        }
+        // stack modifiers?
+        // break out wep mods into separate class*
+        if (prefab == snakeShotPrefab)
+        {
+
         }
     }
 

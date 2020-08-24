@@ -41,7 +41,10 @@ public class LevelManager : MonoBehaviour
         //{
         //    NewWave(); 
         //}
-
+        if (Input.GetKeyUp(KeyCode.G))
+        {
+            SceneManager.LoadScene("FinalBoss"); 
+        }
     }
 
     void NewWave()

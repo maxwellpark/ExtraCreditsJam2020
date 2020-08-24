@@ -8,6 +8,7 @@ public class PlayerData : MonoBehaviour
     public static int damage = 2; 
     public static int healthPoints = 10;
     public static int abilityCooldown = 60;
+    public static float attackSpeed = 3f; 
 
     public static float slowAmount = 0.5f; 
 
