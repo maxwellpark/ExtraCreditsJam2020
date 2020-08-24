@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Projectile
+  - Pet
+  - Enemy
+  - Wall
   layers:
   - Default
   - TransparentFX
@@ -15,7 +18,7 @@ TagManager:
   - 
   - 
   - Enemies
-  - 
+  - Obstacle
   - 
   - 
   - 

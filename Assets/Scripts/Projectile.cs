@@ -25,4 +25,12 @@ public class Projectile : MonoBehaviour
     //    Destroy(effect, effectDelay);
     //    Destroy(gameObject);
     //}
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.transform.tag == "Wall")
+        {
+            Destroy(gameObject); 
+        }
+    }
 }
