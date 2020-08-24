@@ -11,7 +11,7 @@ public class PlayerMovement : MonoBehaviour
 {
     public Camera mainCamera;
 
-    public static float speed;
+    public float movementSpeed;
     public static Vector2 movement;
     public Vector3 mousePosition;
 
@@ -20,8 +20,6 @@ public class PlayerMovement : MonoBehaviour
     {
         Screen.fullScreen = true; 
         //Cursor.visible = false;
-        //GetComponent<Rigidbody2D>().c
-        
     }
 
     void Update()
@@ -29,15 +27,11 @@ public class PlayerMovement : MonoBehaviour
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
 
-        SetDirection();
-
-        //mousePosition = mainCamera.ScreenToWorldPoint(Input.mousePosition);
+        mousePosition = mainCamera.ScreenToWorldPoint(Input.mousePosition);
         //Debug.DrawRay(transform.position, mousePosition * 100f, Color.red); 
         //Debug.DrawRay(transform.position, new Vector3(transform.position.y + 100f, 0f)); 
         //Physics2D.Raycast(transform.position, mousePosition);
-        //Physics2D.Raycast(transform.position, Vector2.up);
-
-        //Debug.Log("Cursor at: " + Input.mousePosition);
+        Physics2D.Raycast(transform.position, Vector2.up);
     }
 
     private void FixedUpdate()
@@ -57,47 +51,6 @@ public class PlayerMovement : MonoBehaviour
         //transform.rotation = Quaternion.Euler(0f, 0f, zAngle);
 
         Vector3 velocity = new Vector3(movement.x, movement.y, 0f);
-        transform.position += velocity * speed * Time.fixedDeltaTime;
-    }
-
-    private void SetDirection()
-    {
-        if (movement == Vector2.up)
-        {
-            SpriteAnimator.direction = Direction.up;
-        }
-        else if (movement == new Vector2(-1f, 1f))
-        {
-            SpriteAnimator.direction = Direction.upleft;
-        }
-        else if (movement == Vector2.left)
-        {
-            SpriteAnimator.direction = Direction.left;
-        }
-        else if (movement == new Vector2(-1f, -1f))
-        {
-            SpriteAnimator.direction = Direction.downleft;
-        }
-        else if (movement == Vector2.down)
-        {
-            SpriteAnimator.direction = Direction.down;
-        }
-        else if (movement == new Vector2(1f, -1f))
-        {
-            SpriteAnimator.direction = Direction.downright;
-        }
-        else if (movement == Vector2.right)
-        {
-            SpriteAnimator.direction = Direction.right;
-        }
-        else if (movement == Vector2.one)
-        {
-            SpriteAnimator.direction = Direction.upright;
-        }
-    }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        PlayerData.healthPoints -= 1; 
+        transform.position += velocity * movementSpeed * Time.fixedDeltaTime;
     }
 }

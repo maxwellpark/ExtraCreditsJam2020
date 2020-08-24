@@ -14,6 +14,7 @@ public class Pickup : ScriptableObject
     public GameObject prefab;
     public Weapon weapon; 
     public Vector2 coordinates;
+    public float duration; 
     public int health;
     public int damage;
     public int speedIncrease;
@@ -35,6 +36,9 @@ public class Pickup : ScriptableObject
             //ProjectileManager.currentWeaponPrefab = weapon.prefab;
             PlayerData.damage = damage; 
             ProjectileManager.weaponType = weaponType;
+            ProjectileManager.weaponActive = true;
+            ProjectileManager.weaponDuration = duration;
+            //ProjectileManager.timer = duration; 
         }
         else if (type == PickupType.speed)
         {
