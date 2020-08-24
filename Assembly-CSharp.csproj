@@ -64,6 +64,7 @@
     <Compile Include="Assets\Scripts\CombatConstants.cs" />
     <Compile Include="Assets\Scripts\Projectile.cs" />
     <Compile Include="Assets\Scripts\Enemies\EnemyMovement.cs" />
+    <Compile Include="Assets\Scripts\Enemies\Boss.cs" />
     <Compile Include="Assets\Scripts\Pet\PetMovement.cs" />
     <Compile Include="Assets\Scripts\Enemies\Spawner.cs" />
     <Compile Include="Assets\Scripts\Levels\Level2.cs" />
@@ -88,7 +89,7 @@
     <Compile Include="Assets\Scripts\Enemies\EnemyInteraction.cs" />
     <Compile Include="Assets\Scripts\Levels\Level1.cs" />
     <Compile Include="Assets\Scripts\Pickup.cs" />
-    <Compile Include="Assets\Scripts\Enemies\Boss.cs" />
+    <Compile Include="Assets\Scripts\AudioManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
