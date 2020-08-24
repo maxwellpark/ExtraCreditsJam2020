@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: BlastPickup
   m_EditorClassIdentifier: 
   prefab: {fileID: 0}
-  weapon: {fileID: 0}
   coordinates: {x: 0, y: 0}
+  duration: 60
   health: 0
-  damage: 5
+  damage: 3
   speedIncrease: 0
   type: 2
-  weaponType: 3
+  weaponType: 5

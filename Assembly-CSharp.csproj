@@ -57,39 +57,38 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\Levels\Exit.cs" />
     <Compile Include="Assets\Scripts\Enemies\EnemyData.cs" />
-    <Compile Include="Assets\Scripts\Enemies\AI.cs" />
     <Compile Include="Assets\Scripts\Levels\LevelManager.cs" />
     <Compile Include="Assets\Scripts\Enemies\EnemyConstants.cs" />
     <Compile Include="Assets\Scripts\Enemies\EnemySpriteAnimator.cs" />
     <Compile Include="Assets\Scripts\CombatConstants.cs" />
     <Compile Include="Assets\Scripts\Projectile.cs" />
-    <Compile Include="Assets\Scripts\Enemies\EnemyMovement.cs" />
     <Compile Include="Assets\Scripts\Enemies\Boss.cs" />
     <Compile Include="Assets\Scripts\AudioManager.cs" />
     <Compile Include="Assets\Scripts\Pet\PetMovement.cs" />
     <Compile Include="Assets\Scripts\Enemies\Spawner.cs" />
     <Compile Include="Assets\Scripts\Levels\Level2.cs" />
-    <Compile Include="Assets\Scripts\Enemies\Agent.cs" />
-    <Compile Include="Assets\Scripts\Enemies\EnemyAI.cs" />
     <Compile Include="Assets\Scripts\Enemies\EnemyVFX.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerMovement.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerData.cs" />
     <Compile Include="Assets\Scripts\SpriteAnimator.cs" />
     <Compile Include="Assets\Scripts\Levels\LevelGenerator.cs" />
-    <Compile Include="Assets\Scripts\Weapon.cs" />
-    <Compile Include="Assets\Scripts\Orbit.cs" />
     <Compile Include="Assets\Scripts\CameraController.cs" />
     <Compile Include="Assets\Scripts\Levels\TilemapActions.cs" />
     <Compile Include="Assets\Scripts\PickupObject.cs" />
-    <Compile Include="Assets\Scripts\MeleeAttack.cs" />
     <Compile Include="Assets\Scripts\Levels\Level.cs" />
     <Compile Include="Assets\Scripts\ProjectileManager.cs" />
     <Compile Include="Assets\Scripts\Boundary.cs" />
-    <Compile Include="Assets\Scripts\Enemies\Hazmat.cs" />
     <Compile Include="Assets\Scripts\Enemies\EnemyInteraction.cs" />
     <Compile Include="Assets\Scripts\Levels\Level1.cs" />
     <Compile Include="Assets\Scripts\Pickup.cs" />
-    <Compile Include="Assets\Scripts\Enemies\Enemy.cs" />
+    <Compile Include="Assets\Scripts\CustomCursor.cs" />
+    <Compile Include="Assets\Scripts\Wall.cs" />
+    <Compile Include="Assets\Scripts\VFX\BloodEffect.cs" />
+    <Compile Include="Assets\Scripts\Pet\PetInteraction.cs" />
+    <Compile Include="Assets\Scripts\UI\TitleScreen.cs" />
+    <Compile Include="Assets\Scripts\UI\PauseMenu.cs" />
+    <Compile Include="Assets\Scripts\Player\Respawn.cs" />
+    <Compile Include="Assets\Scripts\DeathMenu.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

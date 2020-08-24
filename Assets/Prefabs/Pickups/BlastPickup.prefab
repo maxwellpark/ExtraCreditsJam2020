@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 8577042778303070286}
   - component: {fileID: 7350135425887948693}
-  - component: {fileID: 7956046310776924036}
   - component: {fileID: 7802380436749231439}
   - component: {fileID: 5341426497363207094}
+  - component: {fileID: 5650862233441940570}
   m_Layer: 0
   m_Name: BlastPickup
   m_TagString: Untagged
@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 8252153380263821072}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 4.101922, y: 4.101922, z: 4.101922}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -85,19 +85,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &7956046310776924036
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8252153380263821072}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 54253d1cc8cd9fe4486cec702fe101f7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pickup: {fileID: 11400000, guid: 82be1498846c9f040a391cd63e8a9b2e, type: 2}
 --- !u!61 &7802380436749231439
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -145,3 +132,16 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &5650862233441940570
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8252153380263821072}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54253d1cc8cd9fe4486cec702fe101f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pickup: {fileID: 11400000, guid: 82be1498846c9f040a391cd63e8a9b2e, type: 2}

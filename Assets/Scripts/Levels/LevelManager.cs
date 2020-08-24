@@ -32,7 +32,7 @@ public class LevelManager : MonoBehaviour
         waveTwoContainer = GameObject.Find("WaveTwoContainer");
 
         //exitTileBase = tilemap.GetTile(exitPosition); 
-        Debug.Log(levels[currentLevel].scenePath);
+        //Debug.Log(levels[currentLevel].scenePath);
     }
 
     void Update()

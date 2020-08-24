@@ -10,6 +10,9 @@ public class AudioManager : MonoBehaviour
     {
         audioSource = GetComponent<AudioSource>();
 
+        // redundant?
+        audioSource.Play();
+
     }
 
     void Update()

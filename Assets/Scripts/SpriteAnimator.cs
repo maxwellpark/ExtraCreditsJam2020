@@ -82,6 +82,7 @@ public class SpriteAnimator : MonoBehaviour
     // the player's current direction 
     private void UpdateFrameArray()
     {
+        //Debug.Log("Direction: " + direction); 
         switch (direction)
         {
             case Direction.up:

@@ -8,13 +8,17 @@ public class EnemyInteraction : MonoBehaviour
 {
     public GameObject playerObject;
     public PlayerData playerData;
-    EnemyData enemyData; 
+    EnemyData enemyData;
+    BloodEffect bloodEffect;
+
+    public GameObject blood; 
 
     void Start()
     {
         playerObject = GameObject.FindGameObjectWithTag("Player");
         playerData = playerObject.GetComponent<PlayerData>();
-        enemyData = GetComponent<EnemyData>(); 
+        enemyData = GetComponent<EnemyData>();
+        bloodEffect = GetComponent<BloodEffect>(); 
     }
 
     void Update()
@@ -22,14 +26,23 @@ public class EnemyInteraction : MonoBehaviour
         
     }
 
-    private void DamagePlayer()
-    {
-        PlayerData.healthPoints -= enemyData.damage;  
-    }
-
     public void TakeDamage(int damage)
     {
         enemyData.hitpoints -= PlayerData.damage; 
+    }
+
+    //public void BloodEffect()
+    //{
+    //    for (int i = 0; i < 5; i++)
+    //    {
+    //        Instantiate(blood, transform); 
+
+    //    }
+    //}
+
+    public void DeathEffect()
+    {
+
     }
 
     // collisions with other objects 
@@ -38,14 +51,15 @@ public class EnemyInteraction : MonoBehaviour
         // should switch tag here 
         if (other.transform.tag == "Player")
         {
-            DamagePlayer();
+            //DamagePlayer();
         }
         else if (other.transform.tag == "Pet")
         {
-            Debug.Log("Pet collision with enemy."); 
+            Debug.Log("Pet collision with enemy.");
             // game over 
             // load title screen or refresh level 
             // lives? 
+            PlayerData.lives--; 
             Application.Quit();
         }
         else if (other.transform.tag == "Projectile")
@@ -71,6 +85,7 @@ public class EnemyInteraction : MonoBehaviour
 
         if (enemyData.hitpoints <= 0)
         {
+            //bloodEffect.CreateBlood(); 
             Destroy(gameObject);
         }
     }

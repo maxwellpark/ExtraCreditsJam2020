@@ -15,7 +15,7 @@ EditorBuildSettings:
     path: Assets/Scenes/TestLevel3.unity
     guid: 6f7bd345f90482f4c9ffddd70d833fd9
   - enabled: 1
-    path: Assets/Scenes/FinalBoss.unity
+    path: Assets/Scenes/Finished/FinalBoss.unity
     guid: 7888e1e961e2d0849a1a80497b3501db
   - enabled: 1
     path: Assets/Scenes/TestLevel1.unity
@@ -23,4 +23,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TestLevel2.unity
     guid: 1b1ac5beef46ccb449c7573098d60f31
+  - enabled: 1
+    path: Assets/Scenes/Finished/Caves.unity
+    guid: e7ac96587321f458ea561cee11083a0a
+  - enabled: 1
+    path: Assets/Scenes/Finished/Route 1.unity
+    guid: b6e25280420f24b889d9d16982b46b0e
   m_configObjects: {}

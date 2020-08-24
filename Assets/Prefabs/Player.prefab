@@ -127,7 +127,6 @@ GameObject:
   - component: {fileID: 5617401901784980443}
   - component: {fileID: 5617401901784980438}
   - component: {fileID: 5617401901784980437}
-  - component: {fileID: 5617401901784980444}
   - component: {fileID: 5477627130750312601}
   m_Layer: 0
   m_Name: Player
@@ -211,18 +210,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3cff0ddcd6457b54cac9ae40c4ef44c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectilePrefab: {fileID: 5546633202344080935, guid: 25a1c324d42563d4ab78b08341a765e5, type: 3}
-  projectileContainer: {fileID: 0}
-  gunBarrel: {fileID: 5617401900167161889}
   startingWeaponPrefab: {fileID: 5546633202344080935, guid: 25a1c324d42563d4ab78b08341a765e5, type: 3}
   dualShotPrefab: {fileID: 5546633202344080935, guid: f8c914eb484fd1c439365d33ed60ba5d, type: 3}
   triShotPrefab: {fileID: 0}
   slowProjectilePrefab: {fileID: 166061534253400989, guid: f6cd8f87e4ae00649ba08e6bcbd89eb9, type: 3}
   snakeShotPrefab: {fileID: 0}
   theBigOnePrefab: {fileID: 7426114686959960247, guid: c42d3ec353c43e04eab422f8fc2d3d33, type: 3}
-  startingWeapon: {fileID: 11400000, guid: f9570139c59494d47bf277e401d0ac37, type: 2}
-  projectileDropOff: {x: 64, y: 64, z: 0}
   muzzleVelocity: 20
+  spreadDistance: 0.2
 --- !u!114 &5617401901784980443
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -312,25 +307,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.2991467, y: 0.3237204}
   m_EdgeRadius: 0
---- !u!114 &5617401901784980444
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5617401901784980436}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 55838d2cdcb3e2346b3724ff302aca3f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  meleeWeapon: {fileID: 5617401901789430998}
-  visualPrefab: {fileID: 6084693222801321427, guid: bcde4663d2f0a0b4799e4d4bb44bbb47, type: 3}
-  attackPosition: {fileID: 5617401901789430999}
-  nearbyEnemies:
-    serializedVersion: 2
-    m_Bits: 256
-  attackRange: 0.4
 --- !u!50 &5477627130750312601
 Rigidbody2D:
   serializedVersion: 4

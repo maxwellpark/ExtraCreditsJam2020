@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Boss : MonoBehaviour
 {
+    public GameObject rocketPrefab;
+    public GameObject gunBarrel; 
+
     // custom audio 
     ProjectileManager pm;
     float rof = 30f;
@@ -11,18 +14,25 @@ public class Boss : MonoBehaviour
 
     void Start()
     {
-        pm = GetComponent<ProjectileManager>();
-        timer = rof; 
+        timer = 500f; 
+        //pm = GetComponent<ProjectileManager>();
+        //timer = rof; 
     }
 
     void Update()
     {
-        if (timer <= 30)
+        if (timer <= 0)
         {
-            pm.FireProjectile(pm.startingWeaponPrefab);
-            timer = rof; 
+            ShootRocket();
+            //pm.FireProjectile(pm.startingWeaponPrefab);
+            //timer = rof; 
         }
         timer--; 
+    }
+
+    void ShootRocket()
+    {
+        Instantiate(rocketPrefab, gunBarrel.transform);
     }
 
 

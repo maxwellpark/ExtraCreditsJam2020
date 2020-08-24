@@ -7,22 +7,22 @@ public class Projectile : MonoBehaviour
     public GameObject collisionEffect;
     private int effectDelay = 1;
     public int damage;
+    float timer = 60f; 
 
-    // move all to recipient methods? 
+    private void Update()
+    {
+        if (timer <= 0)
+        {
+            Destroy(gameObject); 
+        }
+        timer--; 
+    }
 
-    //private void OnCollisionEnter2D(Collision2D collision)
-    //{
-    //    Debug.Log("Oncolliisonenter");
-    //    GameObject effect = Instantiate(collisionEffect, transform.position, Quaternion.identity);
-    //    Destroy(effect, effectDelay);
-    //    Destroy(gameObject);
-    //}
-
-    //private void OnTriggerEnter(Collider other)
-    //{
-    //    Debug.Log("Ontriggerenter");
-    //    GameObject effect = Instantiate(collisionEffect, transform.position, Quaternion.identity);
-    //    Destroy(effect, effectDelay);
-    //    Destroy(gameObject);
-    //}
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.transform.tag == "Wall")
+        {
+            Destroy(gameObject);
+        }
+    }
 }

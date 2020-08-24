@@ -30,7 +30,7 @@ public class Level2 : MonoBehaviour
             GameObject newEnemy = Instantiate(enemyPrefab);
             newEnemy.transform.parent = enemyContainer.transform;
             newEnemy.transform.position = enemyPositions[i];
-            Debug.Log(newEnemy.transform.position);
+            //Debug.Log(newEnemy.transform.position);
 
         }
     }

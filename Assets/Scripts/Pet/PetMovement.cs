@@ -5,18 +5,29 @@ using UnityEngine;
 public class PetMovement : MonoBehaviour
 {
     public GameObject playerObject;
+    GameObject cameraObject; 
+    Camera mainCamera; 
 
     public Sprite[] frameArray;
     public SpriteRenderer spriteRenderer;
     Vector3 mousePosition;
-    Vector2 petDistance = new Vector2(0.75f, 0f);
+    Vector2 petDistance = new Vector2(1f, 0f);
     int currentFrame; 
     float timer;
     float frameRate = 0.2f; 
 
     void Start()
     {
-        
+        playerObject = GameObject.FindGameObjectWithTag("Player");
+        cameraObject = GameObject.FindGameObjectWithTag("MainCamera");
+        mainCamera = cameraObject.GetComponent<Camera>();
+    }
+
+    private void Update()
+    {
+        mousePosition = mainCamera.ScreenToWorldPoint(Input.mousePosition);
+        //Debug.Log("Mouse pos: " + mousePosition);
+        Debug.Log("Cursor: " + Input.mousePosition); 
     }
 
     void FixedUpdate()
@@ -44,5 +55,8 @@ public class PetMovement : MonoBehaviour
 
         Vector2 playerPosition = playerObject.transform.position;
         transform.position = playerPosition - petDistance;
+
+        //Debug.Log("Player pos: " + playerObject.transform.position); 
+        //Debug.Log("Pet pos: " + transform.position); 
     }
 }
