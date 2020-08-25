@@ -47,4 +47,5 @@
 *.tiff filter=lfs diff=lfs merge=lfs -text
 Library/il2cpp_cache/linkresult_B4E88255E7D1365E2EC0309924C3EBE8/build.bc filter=lfs diff=lfs merge=lfs -text
 *.bc filter=lfs diff=lfs merge=lfs -text
+*.pack filter=lfs diff=lfs merge=lfs -text
 *.apk filter=lfs diff=lfs merge=lfs -text
