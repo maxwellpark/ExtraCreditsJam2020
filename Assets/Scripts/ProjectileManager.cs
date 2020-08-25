@@ -28,7 +28,9 @@ public class ProjectileManager : MonoBehaviour
     public static bool weaponActive;
 
     public float muzzleVelocity = 10f;
-    public float spreadDistance = 2f; 
+    public float spreadDistance = 2f;
+
+    AudioSource sfx; 
     
 
     void Start()
@@ -37,12 +39,15 @@ public class ProjectileManager : MonoBehaviour
         gunBarrel = GameObject.Find("GunBarrel"); 
         currentWeaponPrefab = startingWeaponPrefab;
         weaponType = WeaponType.standard;
+
+        sfx = GameObject.Find("SoundFXManager").GetComponent<AudioSource>(); 
     }
 
     void Update()
     {
         if (Input.GetButtonDown("Fire1")) 
         {
+            sfx.Play(); 
             FireProjectile(SetProjectilePrefab());
 
         }

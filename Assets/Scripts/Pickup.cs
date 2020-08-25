@@ -38,6 +38,12 @@ public class Pickup : ScriptableObject
         else if (type == PickupType.speed)
         {
             PlayerMovement.speed += speedIncrease;
+
+            // speed cap 
+            if (PlayerMovement.speed >= 10)
+            {
+                //PlayerMovement.speed = 10; 
+            }
         }
 
         

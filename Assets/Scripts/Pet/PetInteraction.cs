@@ -20,7 +20,7 @@ public class PetInteraction : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.transform.tag == "Enemy")
+        if (collision.transform.tag == "Enemy" || collision.transform.tag == "BossProjectile")
         {
             Destroy(gameObject);
             PlayerData.lives--;

@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 7131156056992098887}
   m_Layer: 0
   m_Name: BossRocket
-  m_TagString: Untagged
+  m_TagString: BossProjectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -30,13 +30,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2554359382990035791}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
   m_LocalPosition: {x: 0.054018404, y: 0.6590276, z: -11.685526}
   m_LocalScale: {x: 4.4955993, y: 4.4955993, z: 4.4955993}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
 --- !u!212 &2902637255314583988
 SpriteRenderer:
   m_ObjectHideFlags: 0

@@ -24,7 +24,7 @@ public class TitleScreen : MonoBehaviour
     void EnterGame()
     {
         PlayerData.gameOver = false; 
-        SceneManager.LoadScene("Caves"); 
+        SceneManager.LoadScene("Route 1"); 
     }
 
     void DisplayGameOverText()

@@ -1,11 +1,24 @@
-﻿using System.Collections;
+﻿using Pathfinding;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Boss : MonoBehaviour
 {
     public GameObject rocketPrefab;
-    public GameObject gunBarrel; 
+    public GameObject gunBarrel;
+
+    public Transform petTransform; 
+    
+    public GameObject endScreenUI;
+
+    //OnLevelWasLoaded()
+    //{
+
+    //}
+
+    //SceneManager.activeSceneChanged
 
     // custom audio 
     ProjectileManager pm;
@@ -21,18 +34,21 @@ public class Boss : MonoBehaviour
 
     void Update()
     {
-        if (timer <= 0)
-        {
-            ShootRocket();
-            //pm.FireProjectile(pm.startingWeaponPrefab);
-            //timer = rof; 
-        }
-        timer--; 
+        //if (timer <= 0)
+        //{
+        //    ShootRocket();
+        //    //pm.FireProjectile(pm.startingWeaponPrefab);
+        //    //timer = rof; 
+        //    timer = 500f; 
+        //}
+        //timer--; 
     }
 
     void ShootRocket()
     {
-        Instantiate(rocketPrefab, gunBarrel.transform);
+        GameObject newRocket = Instantiate(rocketPrefab, gunBarrel.transform.position, gunBarrel.transform.rotation);
+        //newRocket.GetComponent<AIDestinationSetter>().target = GameObject.FindGameObjectWithTag("Pet").transform;
+        newRocket.GetComponent<AIDestinationSetter>().target = petTransform;
     }
 
 

@@ -162,7 +162,7 @@ GameObject:
   - component: {fileID: 3636405602130908022}
   - component: {fileID: 2427169520477309809}
   - component: {fileID: 2596432518473426291}
-  - component: {fileID: 1067944195675812121}
+  - component: {fileID: 3714817670480971774}
   m_Layer: 8
   m_Name: Boss
   m_TagString: Enemy
@@ -378,7 +378,7 @@ MonoBehaviour:
   petTransform: {fileID: 0}
   tileMap: {fileID: 0}
   movementSpeed: 0.5
-  hitpoints: 5
+  hitpoints: 1000
   damage: 1
   firstWave: 1
 --- !u!114 &3636405602130908022
@@ -440,7 +440,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67c41e66c1afe27408003707f3c70e8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1067944195675812121
+--- !u!114 &3714817670480971774
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -449,15 +449,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 7294581176064475546}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3cff0ddcd6457b54cac9ae40c4ef44c0, type: 3}
+  m_Script: {fileID: 11500000, guid: 17eec893c720db34ba4afaf5e96e6641, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingWeaponPrefab: {fileID: 166061534253400989, guid: 306fd69f7b17ee34e92945bdb5fdd974, type: 3}
-  dualShotPrefab: {fileID: 0}
-  triShotPrefab: {fileID: 0}
-  slowProjectilePrefab: {fileID: 0}
-  snakeShotPrefab: {fileID: 0}
-  theMediumOnePrefab: {fileID: 0}
-  theBigOnePrefab: {fileID: 0}
-  muzzleVelocity: 10
-  spreadDistance: 2
+  rocketPrefab: {fileID: 2554359382990035791, guid: fa578cc5f3d9b2a4e8e77c9c1ad1516e, type: 3}
+  gunBarrel: {fileID: 6769875566192690}
+  endScreenUI: {fileID: 0}
