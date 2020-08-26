@@ -1,3 +1,27 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:ba36a67cdd938e9c61cb77d9b6eab5d20b633f4c36307f004663171627abb82f
-size 1671
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+
+public class Exit : MonoBehaviour
+{
+    GameObject playerObject;
+    public string nextLevel;
+    public Vector2 exitPosition;
+    public float yExit; 
+
+    void Start()
+    {
+        playerObject = GameObject.FindGameObjectWithTag("Player");
+    }
+
+    // change this later to handle exits that are not 
+    // on the north wall...
+    void Update()
+    {
+        if (playerObject.transform.position.y >= yExit)
+        {
+            SceneManager.LoadScene(nextLevel); 
+        }
+    }
+}
