@@ -1,28 +1,3 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class Wall : MonoBehaviour
-{
-
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.transform.tag == "Projectile")
-        {
-            Destroy(collision.gameObject); 
-        }
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:34140411f9c31d1376379ca89d9ba67e6cb47aad1d8bf8e7adcc55eec9d348bc
+size 507

@@ -1,17 +1,3 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class Boundary : MonoBehaviour
-{
-
-
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-        Debug.Log("Exit"); 
-        if (collision.transform.tag == "Projectile")
-        {
-            Destroy(collision.gameObject); 
-        }
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:462c1fcf8daa8db8d6d1957396f28860034b87faa2a6ccf35ed4858f75461ba0
+size 342

@@ -1,2 +1,3 @@
-This folder contains a number of example scenes which I hope will help you get started with the A* Pathfinding Project easier and faster.
-The folder is in no way required by the rest of the library and may be deleted if you wish. However in the ExampleScripts folder you might find useful scripts which you might want to keep.
+version https://git-lfs.github.com/spec/v1
+oid sha256:89059eef7a79ae59defcce49327333a99bbf2220df62ce2cffe26cff0cf8538c
+size 327

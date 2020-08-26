@@ -1,26 +1,3 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-// scriptable object instead? 
-// then levelmanager methods called. 
-public class LevelGenerator : MonoBehaviour
-{
-    public Vector2 entryPosition; 
-    public Vector2 exitPosition;
-    public Vector2[] enemyPositions;
-
-    public Pickup[] pickups; 
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:b58f5ee8cbd92b0735da05c004d9bc58a70270067c09f678a5fcbe14614ade1d
+size 533

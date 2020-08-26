@@ -1,24 +1,3 @@
-using UnityEngine;
-using UnityEditor;
-using System.Collections.Generic;
-
-namespace Pathfinding {
-	[CustomEditor(typeof(AnimationLink))]
-	public class AnimationLinkEditor : Editor {
-		public override void OnInspectorGUI () {
-			DrawDefaultInspector();
-
-			var script = target as AnimationLink;
-
-			EditorGUI.BeginDisabledGroup(script.EndTransform == null);
-			if (GUILayout.Button("Autoposition Endpoint")) {
-				List<Vector3> buffer = Pathfinding.Util.ListPool<Vector3>.Claim ();
-				Vector3 endpos;
-				script.CalculateOffsets(buffer, out endpos);
-				script.EndTransform.position = endpos;
-				Pathfinding.Util.ListPool<Vector3>.Release (buffer);
-			}
-			EditorGUI.EndDisabledGroup();
-		}
-	}
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:b8de375fe60bb4075a63820fd248ca3d43209228c4cb761e8127bbf51819145b
+size 720

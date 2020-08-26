@@ -1,7 +1,3 @@
-A* Pathfinding Project
-======================
-
-- Documentation: https://arongranberg.com/astar/docs
-- Get started tutorial: https://arongranberg.com/astar/docs/getstarted.html
-- Package website: https://arongranberg.com/astar
-- Support forum: https://forum.arongranberg.com/
+version https://git-lfs.github.com/spec/v1
+oid sha256:a6578c126bcc9029ce918a6857ed67a92a319bd82f1f1e78d2c1ede6142f8b0f
+size 282

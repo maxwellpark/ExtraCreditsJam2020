@@ -1,8 +1,3 @@
-{
-    "name": "AstarPathfindingProject",
-    "references": [],
-    "optionalUnityReferences": [],
-    "includePlatforms": [],
-    "excludePlatforms": [],
-    "allowUnsafeCode": false
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:dd4bd55563f09cdf1ec8de7e19c983d15dd82ab33bdc4d0a1c21dd1535d6361f
+size 191

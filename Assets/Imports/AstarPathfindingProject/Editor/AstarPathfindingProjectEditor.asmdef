@@ -1,13 +1,3 @@
-{
-    "name": "AstarPathfindingProjectEditor",
-    "references": [
-        "AstarPathfindingProject",
-        "PackageToolsEditor"
-    ],
-    "optionalUnityReferences": [],
-    "includePlatforms": [
-        "Editor"
-    ],
-    "excludePlatforms": [],
-    "allowUnsafeCode": false
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:015043df6d728f7e750c261a7a1ccb61f32a621fd8310adbd60ad17b48516654
+size 293

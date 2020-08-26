@@ -1,36 +1,3 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class AudioManager : MonoBehaviour
-{
-    AudioSource audioSource;
-    float clipLength;
-    float timer; 
-
-    void Start()
-    {
-        audioSource = GetComponent<AudioSource>();
-        clipLength = audioSource.clip.length;
-        timer = clipLength; 
-    }
-
-    void Update()
-    {
-        if (audioSource.loop)
-        {
-            PreventLoopClash(); 
-        }
-    }
-
-    void PreventLoopClash()
-    {
-        if (timer <= 0f)
-        {
-            audioSource.Stop();
-            audioSource.Play();
-            timer = clipLength;
-        }
-        timer--; 
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:906eacc6183debec08b502aae8609dd19545a96b8d91b37866e46ea01c9f091d
+size 704

@@ -1,25 +1,3 @@
-using UnityEngine;
-using System.Collections.Generic;
-
-namespace Pathfinding.Examples {
-	/// <summary>Helper script in the example scene 'Turn Based'</summary>
-	[HelpURL("http://arongranberg.com/astar/docs/class_pathfinding_1_1_examples_1_1_turn_based_a_i.php")]
-	public class TurnBasedAI : VersionedMonoBehaviour {
-		public int movementPoints = 2;
-		public BlockManager blockManager;
-		public SingleNodeBlocker blocker;
-		public GraphNode targetNode;
-		public BlockManager.TraversalProvider traversalProvider;
-
-		void Start () {
-			blocker.BlockAtCurrentPosition();
-		}
-
-		protected override void Awake () {
-			base.Awake();
-			// Set the traversal provider to block all nodes that are blocked by a SingleNodeBlocker
-			// except the SingleNodeBlocker owned by this AI (we don't want to be blocked by ourself)
-			traversalProvider = new BlockManager.TraversalProvider(blockManager, BlockManager.BlockMode.AllExceptSelector, new List<SingleNodeBlocker>() { blocker });
-		}
-	}
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:1b785e67b0762987450531a55c045e35a70bb019ce17b81d76af06e86000300f
+size 1002

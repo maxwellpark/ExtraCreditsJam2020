@@ -1,28 +1,3 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class Projectile : MonoBehaviour
-{
-    public GameObject collisionEffect;
-    private int effectDelay = 1;
-    public int damage;
-    float timer = 60f; 
-
-    private void Update()
-    {
-        if (timer <= 0)
-        {
-            Destroy(gameObject); 
-        }
-        timer--; 
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.transform.tag == "Wall")
-        {
-            Destroy(gameObject);
-        }
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:a46184dbe499542c6a953d98f2b6eb2d206cb9b2401c529bd090139ad37b5bc7
+size 578

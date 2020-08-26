@@ -1,26 +1,3 @@
-Shader "Projector/Light" {
-  Properties {
-  	  _Color ("Main Color", Color) = (1,1,1,1)   	
-     _ShadowTex ("Cookie", 2D) = "" { TexGen ObjectLinear }
-     _FalloffTex ("FallOff", 2D) = "" { TexGen ObjectLinear }
-  }
-  Subshader {
-     Pass {
-        ZWrite off
-        Fog { Color (0, 0, 0) }
-        Color [_Color]
-        ColorMask RGB
-        Blend DstColor One
-		Offset -1, -1
-        SetTexture [_ShadowTex] {
-		   combine texture * primary, ONE - texture
-           Matrix [_Projector]
-        }
-        SetTexture [_FalloffTex] {
-           constantColor (0,0,0,0)
-           combine previous lerp (texture) constant
-           Matrix [_ProjectorClip]
-        }
-     }
-  }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:1435442949df6c7d7708470e79f56d5bad30288114aee3c142491ce43b4a7b43
+size 708

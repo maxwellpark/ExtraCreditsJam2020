@@ -1,11 +1,3 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class EnemyConstants : MonoBehaviour
-{
-    public static float movementSpeed = 3f;
-    public static int damage = 1; 
-
-    // chase speed, charge_distance, chase_threshold_distance, attack_distance,
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:9e3e0adbb00f05270715a347c47659052eb1bc598718394960513d831669d465
+size 291
