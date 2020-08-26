@@ -86,3 +86,7 @@ ehthumbs.db
 Corridor/Library/ShaderCache/
 Corridor/Library/metadata/./.git/objects/pack/pack-6655559f8c19fc3087098649eff31aefa2f9513d.pack
 ./Library/il2cpp_cache/linkresult_B4E88255E7D1365E2EC0309924C3EBE8/build.bc
+
+
+# Misc 
+Library\*
