@@ -5,6 +5,8 @@ using Pathfinding;
 
 public class EnemyVFX : MonoBehaviour
 {
+    Transform petTransform;     
+
     AIPath aiPath;
     AIDestinationSetter destinationSetter;
     EnemySpriteAnimator enemySpriteAnimator;
@@ -17,7 +19,9 @@ public class EnemyVFX : MonoBehaviour
     {
         aiPath = GetComponent<AIPath>();
         destinationSetter = GetComponent<AIDestinationSetter>(); 
-        enemySpriteAnimator = GetComponent<EnemySpriteAnimator>(); 
+        enemySpriteAnimator = GetComponent<EnemySpriteAnimator>();
+
+        petTransform = GameObject.Find("JellyPetNew").transform;
     }
 
     void Update()
@@ -32,7 +36,7 @@ public class EnemyVFX : MonoBehaviour
         // This can probably be simplified 
         if (aiPath.desiredVelocity.y >= 0.01f)
         {
-            if (transform.position.x + (destinationSetter.target.transform.position.x - transform.position.x) <= verticalThreshold)
+            if (transform.position.x + (petTransform.position.x - transform.position.x) <= verticalThreshold)
             {
                 enemySpriteAnimator.direction = Direction.up;
             }
@@ -43,7 +47,7 @@ public class EnemyVFX : MonoBehaviour
         }
         else if (aiPath.desiredVelocity.y <= 0.01f)
         {
-            if (transform.position.x + (destinationSetter.target.transform.position.x - transform.position.x) <= verticalThreshold)
+            if (transform.position.x + (petTransform.position.x - transform.position.x) <= verticalThreshold)
             {
                 enemySpriteAnimator.direction = Direction.down;
             }

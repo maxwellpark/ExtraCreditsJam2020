@@ -10,6 +10,9 @@ public class EnemyInteraction : MonoBehaviour
     public GameObject playerObject;
     public PlayerData playerData;
     EnemyData enemyData;
+
+    Vector3 lastPosition; 
+    int unstickDistance; 
     
     //BloodEffect bloodEffect;
     //public GameObject blood; 
@@ -24,7 +27,23 @@ public class EnemyInteraction : MonoBehaviour
 
     void Update()
     {
-        
+        Vector3 currentPosition = transform.position;
+
+        // Remember to determine whether left or right is optimal 
+        // by subtracting by adding the distance 
+        if (currentPosition.x == lastPosition.x)
+        {
+            transform.position += new Vector3(unstickDistance, 0f, 0f);
+        }
+        else if (currentPosition.y == lastPosition.y)
+        {
+            // enemies always come from the north?
+            transform.position += new Vector3(0f, -unstickDistance, 0f); 
+        }
+
+        // Save last frame's position 
+        lastPosition = currentPosition;
+
     }
 
     public void TakeDamage()
@@ -56,9 +75,14 @@ public class EnemyInteraction : MonoBehaviour
                 TakeDamage();
                 enemyData.movementSpeed = 0f;
                 // remember to start timer
+                // and play animation/add static sprite 
 
                 Destroy(other.gameObject);
                 break;
+
+            case "Wall":
+                // Unstick method here?
+                break; 
         }
 
         if (enemyData.hitpoints <= 0)
@@ -66,5 +90,11 @@ public class EnemyInteraction : MonoBehaviour
             //bloodEffect.CreateBlood(); 
             Destroy(gameObject);
         }
+    }
+
+    void UnstickEnemy()
+    {
+        // naive solution for now 
+        // can encapsulate update method here if needed. 
     }
 }
